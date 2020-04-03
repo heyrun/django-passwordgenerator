@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+</head>
+<body>
+    <div class="container">
+   <div class="jumbotron">
+       <h1>Genearte Password</h1>
+    <hr class="my-4">
+    <p>Generate a classy password</p>
+</div>
+    <form action="{% url 'password' %}" method="GET">
+        <div class="form-group">
+            <label for="length">Password length</label>
+        <select name="length" id="length">
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12" selected='selected'>12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            
+        </select>
+        <br>
+        <label for="uppercase">Uppercase</label>
+        <input type="checkbox" name="uppercase" id="uppercase" >
+        <br>
+        <br>
+        <label for="numbers">Numbers</label>
+        <input type="checkbox" name="numbers" id="numbers" >
+        <br>
+        <br>
+        <label for="special">Spcial Characters</label>
+        <input type="checkbox" name="special" id="special" >
+        <br>
+        <input type="submit" value="Generate Password" class="btn btn-primary">
+        </div>
+    </form>
+
+
+    <a href="{% url 'home' %}">Home page</a>
+    <a href="{% url 'about' %}">about the site</a>
+
+</div>
+</body>
+</html>
